@@ -1,10 +1,6 @@
 FROM ubuntu:17.04
 
-RUN \
-  set -x && \
-  export DEBIAN_FRONTEND=noninteractive && \
-  apt update && \
-  apt install -y \
-      vagrant \
-      virtualbox \
-  apt clean
+RUN apt-get update && apt-get install -y \
+    vagrant \
+    virtualbox \
+ && rm -rf /var/lib/apt/lists/*
